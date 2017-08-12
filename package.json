@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start:dev": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -16,6 +17,7 @@
     "express": "^4.15.4",
     "express-handlebars": "^3.0.0",
     "express-session": "^1.15.5",
+    "lodash": "^4.17.4",
     "mysql": "^2.14.1",
     "mysql2": "^1.4.0",
     "passport": "^0.3.2",

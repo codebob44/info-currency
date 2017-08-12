@@ -40,6 +40,8 @@ models.sequelize.sync().then(function() {
 
 //Routes
 var authRoute = require('./app/routes/auth.js')(app,passport);
+app.use('/api', require('./app/routes/api-routes'));
+app.use('/', require('./app/routes/html-routes'));
 
 //load passport strategies
 require('./app/config/passport/passport.js')(passport, models.user);

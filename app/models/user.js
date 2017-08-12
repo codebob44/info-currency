@@ -45,7 +45,58 @@ module.exports = function(sequelize, Sequelize) {
         status: {
             type: Sequelize.ENUM('active', 'inactive'),
             defaultValue: 'active'
-        }
+        },
+		age: {
+			type: Sequelize.INTEGER,
+			validate: {
+				min: 18,
+				max: 117
+			}
+		},
+		sex: {
+			type: Sequelize.STRING,
+			validate: {}
+		},
+		state: {
+			type: Sequelize.STRING,
+			validate: {}
+		},
+		zip: {
+			type: Sequelize.INTEGER,
+			validate: {}
+		},
+		income: {
+			type: Sequelize.INTEGER,
+			validate: {}
+		},
+		marital_status: {
+			type: Sequelize.STRING,
+			validate: {}
+		},
+		balance: {
+			type: Sequelize.INTEGER,
+			validate: {}
+		},
+		movies: {
+			type: Sequelize.BOOLEAN,
+			validate: {}
+		},
+		music: {
+			type: Sequelize.BOOLEAN,
+			validate: {}
+		},
+		sports: {
+			type: Sequelize.BOOLEAN,
+			validate: {}
+		},
+		fashion: {
+			type: Sequelize.BOOLEAN,
+			validate: {}
+		},
+		social: {
+			type: Sequelize.BOOLEAN,
+			validate: {}
+		}
  
  
     });
