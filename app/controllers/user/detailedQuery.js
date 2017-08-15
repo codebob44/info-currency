@@ -1,30 +1,11 @@
-let models = require('../models');
 let _ = require('lodash');
+let models = require('../../models');
 
-module.exports = {
-	create: function (userobject) {
-		return models.users.create(userobject)
-	},
-	update: function (userId, updateData) {
-		return models.User.update(updateData, {
-			where: {
-				id: userId
-			}
-		})
-	},
-	findAll: function () {
-		return models.users.all()
-	},
-	getOneById: function (userId) {
-		return models.users.findOne({where: {id: userId}})
-	},
-	detailQuery: function (queryDetails) {
-		let queryParams = {};
-		queryParams['where'] = detailedQuery(queryDetails);
-		queryParams['attributes'] = {'exclude': ['userName', 'userEmail']};
-		return models.users.findAll(queryParams)
-	}
-
+module.exports = function (queryDetails) {
+	let queryParams = {};
+	queryParams['where'] = detailedQuery(queryDetails);
+	queryParams['attributes'] = {'exclude': ['userName', 'userEmail']};
+	return models.user.findAll(queryParams)
 };
 
 
@@ -61,8 +42,7 @@ function detailedQuery(query) {
 		}
 
 	}
-}
-
+};
 
 
 function age(value) {
@@ -110,8 +90,3 @@ function income(value) {
 			break;
 	}
 }
-
-
-
-
-

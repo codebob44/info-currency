@@ -1,13 +1,16 @@
 var express = require('express');
 var app = express();
+var path = require('path');
 var passport   = require('passport');
 var session    = require('express-session');
 var bodyParser = require('body-parser');
 var env = require('dotenv').load();
-var exphbs = require('express-handlebars')
+var exphbs = require('express-handlebars');
+let serveStatic = require('serve-static');
+
 
 //For Handlebars
-app.set('views', './app/views')
+app.set('views', './app/views');
 app.engine('hbs', exphbs({
     extname: '.hbs'
 }));
@@ -23,11 +26,14 @@ app.use(session({ secret: 'keyboard cat',resave: true, saveUninitialized:true}))
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
+// serve static assets
+app.use('/assets', serveStatic(path.join(__dirname, 'assets')));
 
-app.get('/', function(req, res) {
-    res.send('Welcome to Passport with Sequelize');
-});
-
+app.use('/update/:id', function(req, res, next){
+    console.log(req);
+    next();
+})
+require('./app/routes')(app,passport);
 //Models
 var models = require("./app/models");
  
@@ -38,10 +44,12 @@ models.sequelize.sync().then(function() {
     console.log(err, "Something went wrong with the Database Update!");
 });
 
+/*
 //Routes
 var authRoute = require('./app/routes/auth.js')(app,passport);
 app.use('/api', require('./app/routes/api-routes'));
 app.use('/', require('./app/routes/html-routes'));
+*/
 
 //load passport strategies
 require('./app/config/passport/passport.js')(passport, models.user);

@@ -20,17 +20,6 @@ $(document).ready(function() {
 	});
 
 
-	console.log(window.location.origin);
-	$('.Demographic').on('click', function(){
-		var id = $('.demoUserId').text();
-		var data = {
-			age: 99,
-			state: 'ny',
-			sex: 'mail',
-			income: 1000000
-		};
-		$.post(window.location.origin+'/update/' + id, data);
-	})
 	//$.post("")
 // if user age = null, then display demographic survey and hide the interest survey
 

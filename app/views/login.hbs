@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title>Login</title>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous" />
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous" />
+
+  <link rel="stylesheet" href="assets/css/reset.css" />
+  <link rel="stylesheet" href="assets/css/login.css" />
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+  <script
+          src="https://code.jquery.com/jquery-3.2.1.min.js"
+          integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+          crossorigin="anonymous">
+  </script>
+
+  <script src="assets/js/login.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Share:400,400i,700,700i" rel="stylesheet">
+
+
+</head>
+
+<body>
+<!--
+    <form id="signin" name="signin" method="post" action="signin">
+        <label for="email">Email Address</label>
+        <input class="text" name="email" type="text" />
+        <label for="password">Password</label>
+        <input name="password" type="password" />
+        <input class="btn" type="submit" value="Sign In" />
+    </form>
+-->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="text-center">
+        <img class="placeholder" alt= "logo" src="assets/images/wallet-white.png"><h2>Welcome to InfoCurrency<h2>
+        <h4>A place where you get value for your personal information.</h4>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+    </div>
+    <div class="col-sm-4">
+      <div class="main-login main-center">
+        <form class="form-horizontal" method="post" action="signin">
+          <div class="panel-heading">
+            <div class="panel-title text-center">
+              <h1 class="title">Login to your account</h1>
+              <hr />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="cols-sm-2 control-label">Your Email</label>
+            <div class="cols-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                <input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="password" class="cols-sm-2 control-label">Password</label>
+            <div class="cols-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                <input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <button class="flat-butt flat-primary-butt">Login</button>
+          </div>
+
+          <div class="login-register">
+            <br/>
+            <h3 class="title">Don't have an account yet? <a href="/signup">Sign up.</a></h3>
+
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-sm-4">
+    </div>
+  </div>
+</div>
+
+</body>
+
+</html>
