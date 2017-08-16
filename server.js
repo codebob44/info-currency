@@ -25,11 +25,14 @@ app.use(passport.session()); // persistent login sessions
 
 
 app.get('/', function(req, res) {
-    res.send('Welcome to Passport with Sequelize');
+    res.render('signup');
 });
 
 //Models
 var models = require("./app/models");
+
+// Static directory
+app.use(express.static("./app/public"));
  
 //Sync Database
 models.sequelize.sync().then(function() {
@@ -45,7 +48,7 @@ var authRoute = require('./app/routes/auth.js')(app,passport);
 require('./app/config/passport/passport.js')(passport, models.user);
  
  
-app.listen(5000, function(err) {
+app.listen(3000, function(err) {
  
     if (!err)
         console.log("Site is live");
