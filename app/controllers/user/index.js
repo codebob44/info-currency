@@ -1,5 +1,4 @@
 let user = require('./user');
-let detailedQuery = require('./detailedQuery');
 
 module.exports = {
 	create: user.create,
@@ -11,5 +10,5 @@ module.exports = {
 	query: user.query,
 	searchPage: user.search,
 	logout: user.logout,
-	detailedQuery
+	detailedQuery: user.search
 };

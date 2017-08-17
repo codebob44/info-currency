@@ -10,8 +10,10 @@ let serveStatic = require('serve-static');
 
 
 //For Handlebars
+//app.locals.layout = path.join(__dirname, 'app/views/layouts/main');
 app.set('views', './app/views');
 app.engine('hbs', exphbs({
+	//defaultLayout: 'main',
     extname: '.hbs'
 }));
 app.set('view engine', '.hbs');

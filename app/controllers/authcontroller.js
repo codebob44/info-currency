@@ -1,28 +1,32 @@
-var exports = module.exports = {}
+module.exports = {
+	signup,
+	signin,
+	home,
+	isLoggedIn,
+	logout
+};
 
-
-exports.signup = function(req,res){
-
-	res.render('signup'); 
-
+function signup(req, res) {
+	res.render('signup');
 }
 
-exports.signin = function(req,res){
-
-	res.render('signin'); 
-
+function signin(req, res) {
+	res.render('signin');
 }
 
-/*exports.dashboard = function(req,res){
+function home(req, res, next) {
+	res.render('login', {title: 'Express'});
+}
 
-	res.render('dashboard'); 
+function isLoggedIn(req, res, next) {
+	if (req.isAuthenticated())
+		return next();
+	res.redirect('/login');
+}
 
-}*/
-
-exports.logout = function(req,res){
-
-  req.session.destroy(function(err) {
-  res.redirect('/');
-  });
+function logout(req, res) {
+	req.session.destroy(function (err) {
+		res.redirect('/');
+	});
 
 }

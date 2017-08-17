@@ -2,11 +2,6 @@ let models = require('../../models/index');
 let _ = require('lodash');
 
 let coreQueries = require('./coreQueries');
-let detailedQuery = require('./detailedQuery');
-
-let event = require('events').EventEmitter;
-let emitter = new event();
-
 
 module.exports = {
 	getOneById: function (req, res) {
@@ -26,7 +21,6 @@ module.exports = {
 					reject(err);
 				})
 		})
-
 	},
 	findAll: function (req, res) {
 		coreQueries.findAll(req.body)
@@ -48,7 +42,7 @@ module.exports = {
 			})
 	},
 	query: function (req, res) {
-		detailedQuery(req.body)
+		coreQueries.detailedQuery(req.body)
 			.then((results) => {
 			console.log("DETAILED QUERY RESULTS");
 				res.json({resultArray: results})
@@ -59,10 +53,19 @@ module.exports = {
 		res.render('user', {userData: req.user});
 	},
 	search: function(req, res){
-		res.render('search');
+		let data = {
+			age: ['25-34', '18-24'],
+			income: ['$125-149,999'],
+			sex: ['man']
+		};
+		coreQueries.detailedQuery(data)
+			.then((response) => {
+			console.log(response);
+				res.json(response);
+			});
+
 	},
 	logout: function(req,res){
-
 		req.session.destroy(function(err) {
 			res.redirect('/');
 		});

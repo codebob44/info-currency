@@ -1,8 +1,8 @@
-let coreQueries = require('./coreQueries');
+let business = require('./business');
 
 module.exports = {
-	create: coreQueries.create,
-	update: coreQueries.update,
-	findAll: coreQueries.findAll,
-	getOneById: coreQueries.getOneById,
+	create: business.create,
+	update: business.update,
+	findAll: business.findAll,
+	getOneById: business.getOneById,
 };
