@@ -5,7 +5,8 @@ module.exports = {
 	signin: frontPages.signin,
 	home: frontPages.home,
 	login: frontPages.login,
-	dashboard: frontPages.dashboard,
+	userDashboard: frontPages.dashboard,
 	buisnessSignup: frontPages.buisnessSignup,
-	buisnessDashboard: frontPages.buisnessDashboard
+	buisnessDashboard: frontPages.buisnessDashboard,
+	buisnessSignin: frontPages.buisnessSignin
 };

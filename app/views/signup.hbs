@@ -16,11 +16,11 @@
 
 <!-- Image and text -->
 <nav class="navbar fixed-top navbar-light" style="background-color: #fff; ">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="{{routing.landing.route}}">
         <img src="/assets/images/infocurrency-logo.png" width="150" height="auto" class="d-inline-block align-top" alt=""></a>
     <nav class="nav justify-content-end">
-        <a class="nav-link active" href="signup">Individual</a>
-        <a class="nav-link" href="signupBiz">Business</a>
+        <a class="nav-link active" href="{{routing.userSignUp.route}}">Individual</a>
+        <a class="nav-link" href="{{routing.bizSignup.route}}">Business</a>
         <!-- <a class="nav-link" href="#">Link</a> -->
     </nav>
 </nav>
@@ -96,7 +96,7 @@
 
                 <div class="login-register text-center">
                     <br/>
-                    <h6 class="title">Already have an account? <a href="login" class="fliper-btn">Login</a></h6>
+                    <h6 class="title">Already have an account? <a href="{{routing.userSignin.route}}" class="fliper-btn">Login</a></h6>
                 </div>
             </form>
         </div>
@@ -111,21 +111,6 @@
 <div class="bottom">
     <div class="row">
 
-        <div class="col-md-4">
-            <div class= "box">
-                Take Control of Your Information
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class= "box">
-                Earn $ for your information
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class= "box">
-                Box 3
-            </div>
-        </div>
     </div>
 </div>
 </div>
@@ -141,11 +126,11 @@
 <!--
 <!DOCTYPE html>
 <html>
- 
+
 <head>
     <title></title>
 </head>
- 
+
 <body>
     <form id="signup" name="signup" method="post" action="/signup">
         <label for="email">Email Address</label>
@@ -158,7 +143,7 @@
         <input name="password" type="password" />
         <input class="btn" type="submit" value="Sign Up" />
     </form>
- 
+
 </body>
- 
+
 </html>-->

@@ -6,13 +6,14 @@ let html = require('./html');
 
 module.exports = {
 	landing: html.home,
-	signup: html.signup,
-	dashboard: html.dashboard,
+	userSignup: html.signup,
+	userLogin: html.login,
+	userDashboard: html.userDashboard,
 	logout: auth.logout,
 	getUserInfo: user.getOneByEmail,
 	query: user.query,
 	search: user.searchPage,
-	login: html.login,
+
 	isLoggedIn: auth.isLoggedIn,
 	getOneById: user.getOneById,
 	create: user.create,
@@ -22,7 +23,8 @@ module.exports = {
 	b_Update: business.update,
 	auth,
 	buisnessSignup: html.buisnessSignup,
-	buisnessDashboard: html.buisnessDashboard
+	buisnessDashboard: html.buisnessDashboard,
+	buisnessLogin: html.buisnessSignin
 };
 
 
