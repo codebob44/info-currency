@@ -49,3 +49,18 @@ h1 {
 .form-group{
 
 }
+
+.input-group-addon {
+    background-color:  #5587fb;
+}
+
+.card-heading {
+    margin: 0;
+}
+.form-group{
+    margin: 0;
+}
+
+#create-account {
+    margin-top: 10px;
+}

@@ -48,10 +48,6 @@ module.exports = {
 				res.json({resultArray: results})
 			})
 	},
-	dashboard: function (req, res) {
-		console.log(req);
-		res.render('user', {userData: req.user});
-	},
 	search: function(req, res){
 		let data = {
 			age: ['25-34', '18-24'],

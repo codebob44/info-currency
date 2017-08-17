@@ -1,4 +1,4 @@
-var authController = require('../controllers/authcontroller.js');
+var authController = require('../controllers/auth/authcontroller.js');
  var controllers = require('../controllers');
 module.exports = function(app, passport) {
  
@@ -10,11 +10,23 @@ module.exports = function(app, passport) {
     	}
 	));
 
+	app.post('/signupBuisness', passport.authenticate('local-signup', {
+			successRedirect: '/buisnessDashboard',
+			failureRedirect: '/signupBuisness'
+		}
+	));
+
 
     app.post('/signin', passport.authenticate('local-signin', {
         successRedirect: '/dashboard',
         failureRedirect: '/login'
     }
     ));
+
+	app.post('/signinBuisness', passport.authenticate('local-signin', {
+			successRedirect: '/buisnessDashboard',
+			failureRedirect: '/login'
+		}
+	));
 
 };

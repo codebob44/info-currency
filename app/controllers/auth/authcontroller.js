@@ -1,22 +1,10 @@
+var pageIndex = require('../../views/pageIndex');
+
 module.exports = {
-	signup,
-	signin,
-	home,
 	isLoggedIn,
-	logout
+	logout,
 };
 
-function signup(req, res) {
-	res.render('signup');
-}
-
-function signin(req, res) {
-	res.render('signin');
-}
-
-function home(req, res, next) {
-	res.render('login', {title: 'Express'});
-}
 
 function isLoggedIn(req, res, next) {
 	if (req.isAuthenticated())

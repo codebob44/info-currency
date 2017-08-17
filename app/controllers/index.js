@@ -1,17 +1,18 @@
-let auth = require('./authcontroller');
+let auth = require('./auth');
 let user = require('./user');
-let business = require('./business/business');
-
+let business = require('./business');
+let html = require('./html');
 
 
 module.exports = {
-	signup: auth.signup,
-	dashboard: user.dashboard,
+	landing: html.home,
+	signup: html.signup,
+	dashboard: html.dashboard,
 	logout: auth.logout,
 	getUserInfo: user.getOneByEmail,
 	query: user.query,
 	search: user.searchPage,
-	home: auth.home,
+	login: html.login,
 	isLoggedIn: auth.isLoggedIn,
 	getOneById: user.getOneById,
 	create: user.create,
@@ -19,7 +20,9 @@ module.exports = {
 	b_GetOneByIds: business.getOneById,
 	b_Create: business.create,
 	b_Update: business.update,
-	auth
+	auth,
+	buisnessSignup: html.buisnessSignup,
+	buisnessDashboard: html.buisnessDashboard
 };
 
 
