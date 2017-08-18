@@ -3,6 +3,7 @@ let pageIndex = require('../views/pageIndex');
 
 module.exports = function (app) {
 	// Landing page (route / )
+
 	app.get(pageIndex.landing.route, controllers.landing);
 
 	// user entry

@@ -33,13 +33,14 @@ module.exports = function(app, passport) {
 	));
 
 
-	app.post(pageIndex.bizSignup.route, passport.authenticate('local-signup', {
+	app.post(pageIndex.bizSignupPost.route, passport.authenticate('local-signup', {
 			successRedirect: pageIndex.bizDashboard.route,
 			failureRedirect: pageIndex.bizSignup.route
 		}
 	));
 
-	app.post(pageIndex.bizSignin.route, passport.authenticate('local-signin', {
+
+	app.post(pageIndex.bizSigninPost.route, passport.authenticate('local-signin', {
 			successRedirect: pageIndex.bizDashboard.route,
 			failureRedirect: pageIndex.bizSignin.route
 		}

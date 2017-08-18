@@ -31,10 +31,10 @@ app.use(passport.session()); // persistent login sessions
 // serve static assets
 app.use('/assets', serveStatic(path.join(__dirname, 'assets')));
 
-app.use('/update/:id', function(req, res, next){
+/*app.use('/', function(req, res, next){
     console.log(req);
     next();
-})
+})*/
 require('./app/routes')(app,passport);
 //Models
 var models = require("./app/models");
