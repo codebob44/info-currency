@@ -19,8 +19,8 @@
   <a class="navbar-brand" href="#">
     <img src="assets/images/infocurrency-logo.png" width="150" height="auto" class="d-inline-block align-top" alt=""></a>
   <nav class="nav justify-content-end">
-    <a class="nav-link active" href="signup">Individual</a>
-    <a class="nav-link" href="signupBiz">Business</a>
+    <a class="nav-link active" href="{{routing.userSignUp.route}}">Individual</a>
+    <a class="nav-link" href="{{routing.bizSignup.route}}">Business</a>
     <!-- <a class="nav-link" href="#">Link</a> -->
   </nav>
 </nav>
@@ -38,7 +38,7 @@
 
     <div class="col-md-4">
       <div class=create-account">
-      <form class="form-horizontal" method="post" action="#">
+      <form class="form-horizontal" method="post" action="{{routing.userSignUp.route}}">
         <div class="card-heading">
           <div class="card-title text-center">
             <h3 class="title">Create an Account</h3>
