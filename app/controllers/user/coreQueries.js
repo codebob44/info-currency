@@ -1,34 +1,28 @@
-let models = require('../models');
+
 let _ = require('lodash');
+let models = require('../../models');
+
 
 module.exports = {
-	create: function (userobject) {
-		return models.users.create(userobject)
-	},
-	update: function (userId, updateData) {
-		return models.User.update(updateData, {
-			where: {
-				id: userId
-			}
-		})
-	},
-	findAll: function () {
-		return models.users.all()
-	},
-	getOneById: function (userId) {
-		return models.users.findOne({where: {id: userId}})
-	},
-	detailQuery: function (queryDetails) {
-		let queryParams = {};
-		queryParams['where'] = detailedQuery(queryDetails);
-		queryParams['attributes'] = {'exclude': ['userName', 'userEmail']};
-		return models.users.findAll(queryParams)
-	}
-
+	create,
+	update,
+	findAll,
+	getOneById,
+	getOneByEmail,
+	detailedQuery
 };
 
 
-function detailedQuery(query) {
+function detailedQuery(queryDetails) {
+	console.log('QUERY DETAILS', queryDetails);
+	let queryParams = {};
+	queryParams['where'] = detailedQueryParse(queryDetails);
+	queryParams['attributes'] = {'exclude': ['userName', 'userEmail']};
+	return models.user.findAll(queryParams)
+};
+
+// TODO make a branch where all prop contribute with ORs instead of ANDS;
+function detailedQueryParse(query) {
 	let whereClause = {};
 	for (var props in query) {
 		if (!_.isArray(query[props])) {
@@ -45,12 +39,12 @@ function detailedQuery(query) {
 			if (props === "age") {
 				whereClause['age'] = {"$or": []};
 				_.forEach(query[props], (item) => {
-					whereClause['age']["$or"].push(age(item));
+					whereClause['age']["$or"].push(item);
 				})
 			} else if (props === "income") {
 				whereClause['income'] = {"$or": []};
 				_.forEach(query[props], (item) => {
-					whereClause['income']["$or"].push(income(item));
+					whereClause['income']["$or"].push(item);
 				})
 			} else {
 				whereClause[props] = {"$or": []};
@@ -61,9 +55,37 @@ function detailedQuery(query) {
 		}
 
 	}
+	return whereClause;
+};
+
+
+
+function create(userobject) {
+	return models.users.create(userobject)
+};
+
+
+function update(userId, updateData) {
+	console.log(models);
+	return models.user.update(updateData, {
+		where: {
+			id: userId
+		}
+	})
+};
+
+function findAll() {
+	return models.users.all()
+};
+
+function getOneById(userId) {
+	return models.users.findOne({where: {id: userId}})
+};
+
+
+function getOneByEmail(email){
+	return models.user.findOne({where: {email: email}});
 }
-
-
 
 function age(value) {
 	switch (value) {
@@ -110,8 +132,3 @@ function income(value) {
 			break;
 	}
 }
-
-
-
-
-

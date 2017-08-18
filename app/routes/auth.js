@@ -1,32 +1,33 @@
-var authController = require('../controllers/authcontroller.js');
- 
+var authController = require('../controllers/auth/authcontroller.js');
+ var controllers = require('../controllers');
+ let pageIndex = require('../views/pageIndex');
 module.exports = function(app, passport) {
  
-    app.get('/signup', authController.signup);
-    app.get('/signin', authController.signin);
+
+   // app.get('/login', authController.signin);
     app.post('/signup', passport.authenticate('local-signup', {
-        successRedirect: '/dashboard',
-        failureRedirect: '/signup'
+        successRedirect: pageIndex.userDashboard.route,
+        failureRedirect: pageIndex.userSignUp.route
     	}
 	));
-	app.get('/dashboard',isLoggedIn, authController.dashboard);
 
-    app.get('/logout', authController.logout);
+	app.post('/signin', passport.authenticate('local-signin', {
+			successRedirect: pageIndex.userDashboard.route,
+			failureRedirect: pageIndex.userSignin.route
+		}
+	));
 
-    app.post('/signin', passport.authenticate('local-signin', {
-        successRedirect: '/dashboard',
-        failureRedirect: '/signin'
-    }
-    ));
 
-    function isLoggedIn(req, res, next) {
-     
-        if (req.isAuthenticated())
-         
-            return next();
-             
-        res.redirect('/signin');
-     
-    }
+	app.post('/signupBuisness', passport.authenticate('local-signup', {
+			successRedirect: pageIndex.bizDashboard.route,
+			failureRedirect: pageIndex.bizSignup.route
+		}
+	));
+
+	app.post('/signinBuisness', passport.authenticate('local-signin', {
+			successRedirect: pageIndex.bizDashboard.route,
+			failureRedirect: pageIndex.bizSignin.route
+		}
+	));
 
 };
