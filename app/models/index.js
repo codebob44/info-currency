@@ -6,8 +6,8 @@ var Sequelize = require("sequelize");
 var env = process.env.NODE_ENV || "development";
 var config = require(path.join(__dirname, '..', 'config', 'config.json'))[env];
 var sequelize;
-if(process.env.JAWS_DB){
-	sequelize = new Sequelize(process.env.JAWS_DB);
+if(process.env.JAWSDB_URL){
+	sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {
 	sequelize = new Sequelize(config.database, process.env.SQL_USERNAME, process.env.SQL_PASSWORD, config);
 }
