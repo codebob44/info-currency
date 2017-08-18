@@ -1,13 +1,15 @@
 
 
 module.exports = {
+	// General Routes and Display Assets
 	landing: {route:'/', page:'userSignUp'},
-	userSignin: {route:'/login', page:'login'},
+	logout: {route: '/logout'},
+	// User Routes and Display Assets
+	userSignin: {route:'/login', page:'userLogin'},
 	userSignUp: {route:'/signup', page:'userSignUp'},
 	userDashboard: {route:'/userDashboard', page:'userDashboard'},
-
-	bizDashboard: {route: '/buisnessDashboard', page: 'buisness'},
-	bizSignup: {route: '/signupBiz', page: 'buisnessSignUp'},
-	bizSignin: {route: '/signinBuisness', page: 'buisnessLogin'},
-	logout: {route: '/logout'}
+	// Business Routes and Display Assets
+	bizDashboard: {route: '/businessDashboard', page: 'businessDashboard'},
+	bizSignup: {route: '/signupBiz', page: 'businessSignUp'},
+	bizSignin: {route: '/signinBusiness', page: 'businessLogin'}
 };
