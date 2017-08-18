@@ -29,7 +29,7 @@ module.exports = function (app) {
 	app.post('/update/:id', controllers.update);
 
 
-	app.get('/search', controllers.isLoggedIn, controllers.search);
+	app.post('/search', controllers.isLoggedIn, controllers.search);
 
 
 

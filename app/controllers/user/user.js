@@ -49,12 +49,7 @@ module.exports = {
 			})
 	},
 	search: function(req, res){
-		let data = {
-			age: ['25-34', '18-24'],
-			income: ['$125-149,999'],
-			sex: ['man']
-		};
-		coreQueries.detailedQuery(data)
+		coreQueries.detailedQuery(req.body)
 			.then((response) => {
 			console.log(response);
 				res.json(response);
