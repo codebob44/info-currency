@@ -8,6 +8,6 @@ module.exports = {
 
 	bizDashboard: {route: '/buisnessDashboard', page: 'buisness'},
 	bizSignup: {route: '/signupBiz', page: 'buisnessSignUp'},
-	bizSignin: {route: '/login', page: ''},
+	bizSignin: {route: '/signinBuisness', page: 'buisnessLogin'},
 	logout: {route: '/logout'}
 };

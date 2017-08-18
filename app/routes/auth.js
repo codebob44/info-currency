@@ -24,7 +24,7 @@ module.exports = function(app, passport) {
 		}
 	));
 
-	app.post('/signinBuisness', passport.authenticate('local-signin', {
+	app.post('/signinBuisness', passport.authenticate('local-buisness', {
 			successRedirect: pageIndex.bizDashboard.route,
 			failureRedirect: pageIndex.bizSignin.route
 		}
