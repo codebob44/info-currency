@@ -48,10 +48,7 @@ module.exports = function(sequelize, Sequelize) {
         },
 		age: {
 			type: Sequelize.STRING,
-			validate: {
-				min: 18,
-				max: 117
-			}
+			validate: {}
 		},
 		sex: {
 			type: Sequelize.STRING,
@@ -69,7 +66,7 @@ module.exports = function(sequelize, Sequelize) {
 			type: Sequelize.STRING,
 			validate: {}
 		},
-		marital_status: {
+	    household: {
 			type: Sequelize.STRING,
 			validate: {}
 		},
