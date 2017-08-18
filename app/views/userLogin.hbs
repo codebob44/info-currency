@@ -55,7 +55,7 @@
     </div>
     <div class="col-sm-4">
       <div class="main-login main-center">
-        <form class="form-horizontal" method="post" action="signinBuisness">
+        <form class="form-horizontal" method="post" action="{{routing.userSignin.route}}">
           <div class="panel-heading">
             <div class="panel-title text-center">
               <h1 class="title">Login to your account</h1>
@@ -89,7 +89,7 @@
 
           <div class="login-register">
             <br/>
-            <h3 class="title">Don't have an account yet? <a href="{{routing.bizSignup.route}}">Sign up.</a></h3>
+            <h3 class="title">Don't have an account yet? <a href="{{routing.userSignUp.route}}">Sign up.</a></h3>
 
           </div>
         </form>
@@ -99,7 +99,7 @@
     </div>
   </div>
 </div>
-
+<a href="{{routing.bizSignin.route}}" >Businesses Sign In Here</a>
 </body>
 
 </html>
