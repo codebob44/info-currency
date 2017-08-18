@@ -16,8 +16,8 @@ module.exports = function (app) {
 	app.get(pageIndex.bizSignin.route, controllers.buisnessLogin);
 	app.get(pageIndex.bizSignup.route, controllers.buisnessSignup);
 	//business home page
-	app.get(pageIndex.bizDashboard.route, controllers.isLoggedIn, controllers.buisnessDashboard);
-
+	app.get(pageIndex.bizDashboard.route, controllers.isLoggedIn, controllers.buisnessDashboard); // comment this and uncomment below to bypass login check in dev environment
+	//app.get(pageIndex.bizDashboard.route, controllers.buisnessDashboard); // Dev bypass login check
 
 	// logout
 	app.get('/logout', controllers.logout);
@@ -29,8 +29,8 @@ module.exports = function (app) {
 	app.post('/update/:id', controllers.update);
 
 
-	app.post('/search', controllers.isLoggedIn, controllers.search);
-
+	app.post('/search', controllers.isLoggedIn, controllers.search); // comment this and uncomment below to bypass login check in dev environment
+	//app.post('/search', controllers.search); // Dev bypass login check
 
 
 	// Business

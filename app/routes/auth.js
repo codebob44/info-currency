@@ -2,9 +2,24 @@ var authController = require('../controllers/auth/authcontroller.js');
  var controllers = require('../controllers');
  let pageIndex = require('../views/pageIndex');
 module.exports = function(app, passport) {
- 
 
-   // app.get('/login', authController.signin);
+
+	// Dev bypass login
+/*	app.post('/signup', bypass);
+
+	app.post('/signin', bypass);
+
+
+	app.post('/signupBuisness', bypass);
+
+	app.post('/signinBuisness', bypass);
+
+	function bypass(req, res){
+		console.log(req);
+		res.redirect(pageIndex.bizDashboard.route);
+	}*/
+
+	// comment below and uncomment above to bypass login
     app.post('/signup', passport.authenticate('local-signup', {
         successRedirect: pageIndex.userDashboard.route,
         failureRedirect: pageIndex.userSignUp.route
